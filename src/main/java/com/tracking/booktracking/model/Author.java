@@ -4,6 +4,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.cassandra.core.cql.PrimaryKeyType;
 
 import org.springframework.data.cassandra.core.mapping.CassandraType;
+import org.springframework.data.cassandra.core.mapping.CassandraType.Name;
 import org.springframework.data.cassandra.core.mapping.Column;
 import org.springframework.data.cassandra.core.mapping.PrimaryKeyColumn;
 import org.springframework.data.cassandra.core.mapping.Table;
@@ -13,10 +14,10 @@ public class Author {
     @Id @PrimaryKeyColumn(name = "ar_id", ordinal = 0, type = PrimaryKeyType.PARTITIONED)
     private String id;
     @Column("ar_name")
-    @CassandraType(type = CassandraType.Name.TEXT)
+    @CassandraType(type = Name.TEXT)
     private String name;
     @Column("ar_personal_name")
-    @CassandraType(type = CassandraType.Name.TEXT)
+    @CassandraType(type = Name.TEXT)
     private String personalName;
 
     public String getId() {
